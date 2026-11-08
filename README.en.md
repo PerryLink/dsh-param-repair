@@ -11,6 +11,11 @@
 
 A pure host-side plugin for DeepSeek Harness: `/translate` maps 13 canonical parameters across 11 vendors, and the `tools/post-execute` repair layer plus the `fix_json` tool deterministically repair broken JSON in successful tool results until it passes schema validation.
 
+> **Formerly `dsh-translate` (0.2.x).** Since 1.0.0 this package is `dsh-param-repair`; the npm name
+> `dsh-translate` now belongs to the [full-page translator](https://github.com/PerryLink/dsh-translate).
+> The `/translate` command, the `fix_json` tool, the `translate/fix` event and every config key are
+> unchanged — migration is just replacing the package name in the profile row.
+
 [Install](#three-step-setup) · [Configuration](#configuration) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)

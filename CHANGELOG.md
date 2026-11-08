@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-11-08
+
+### Changed
+
+- Both READMEs now state the original name (`dsh-translate` 0.2.x) and that the npm name now belongs to
+  the full-page translator, so readers arriving from an old link can migrate in one step.
 ## [1.0.0] - 2026-11-08
 
 ### Changed
