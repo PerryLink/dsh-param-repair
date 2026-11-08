@@ -28,7 +28,7 @@ execFileSync(process.execPath, ['--check', path.join(root, 'index.mjs')], { stdi
 
 // 2. The ESM host face must import under plain Node and expose the plugin contract.
 const index = await import(pathToFileURL(path.join(root, 'index.mjs')).href)
-if (typeof index.apply !== 'function' || index.name !== 'dsh-translate') {
+if (typeof index.apply !== 'function' || index.name !== 'dsh-param-repair') {
   throw new Error('index.mjs exports an unexpected plugin face')
 }
 

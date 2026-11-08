@@ -2,7 +2,7 @@
  * lib/fix.mjs regression suite: the upstream JSON-Schema-Enforcer-Proxy test
  * cases converted to JS, plus hostile-input coverage (deep nesting, circular
  * schemas, hostile payloads) proving the pipeline stays total.
- * @module dsh-translate/test/fix.test
+ * @module dsh-param-repair/test/fix.test
  */
 
 import { test } from 'node:test'

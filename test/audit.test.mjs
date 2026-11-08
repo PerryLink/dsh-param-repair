@@ -3,7 +3,7 @@
  * `ignorable`-envelope hosts, and a silent skip on envelope-less hosts
  * (0.1.0-rc.6/rc.8, 0.1.1-rc.2, 0.1.2-alpha.1). A throwing append is
  * swallowed — the audit never changes the tool outcome.
- * @module dsh-translate/test/audit.test
+ * @module dsh-param-repair/test/audit.test
  */
 
 import { test } from 'node:test'

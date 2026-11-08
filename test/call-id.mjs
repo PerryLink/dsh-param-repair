@@ -4,7 +4,7 @@
  * exports `CallId`. Derive the brand from the dsh-tools execution
  * contract (`ToolExecution['callId']`) so the tests stay green on both
  * rulers without naming either brand name.
- * @module dsh-translate/test/call-id
+ * @module dsh-param-repair/test/call-id
  */
 
 /** @typedef {import('@deepseek-ai/dsh-tools').ToolExecution['callId']} CallIdValue */

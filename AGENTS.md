@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Standalone DeepSeek Harness plugin repository (`dsh-translate`, JS form: pure host). Development follows the dsh-plugin-guide skill and the official plugin contract; this file records repo-local decisions.
+Standalone DeepSeek Harness plugin repository (`dsh-param-repair`, JS form: pure host). Development follows the dsh-plugin-guide skill and the official plugin contract; this file records repo-local decisions.
 
 ## Layout
 

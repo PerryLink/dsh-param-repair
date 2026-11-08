@@ -66,8 +66,8 @@ jobs:
           NPM_CONFIG_LOGLEVEL: verbose
         run: |
           version="$(node -p "require('./package.json').version")"
-          if npm view "dsh-translate@${version}" version >/dev/null 2>&1; then
-            echo "dsh-translate@${version} is already published; skipping npm publish"
+          if npm view "dsh-param-repair@${version}" version >/dev/null 2>&1; then
+            echo "dsh-param-repair@${version} is already published; skipping npm publish"
           else
             # See the guard above: npm's read side can lag a successful publish, so a re-pushed
             # tag can miss it and hit E409 ("Cannot publish over previously staged version"). That

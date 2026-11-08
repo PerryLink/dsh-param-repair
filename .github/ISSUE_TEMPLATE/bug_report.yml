@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a bug in dsh-translate
+description: Report a bug in dsh-param-repair
 title: '[Bug]: '
 labels: ['bug']
 body:
@@ -7,7 +7,7 @@ body:
     id: plugin-version
     attributes:
       label: Plugin version
-      description: The dsh-translate version (`npm ls dsh-translate`, or the git ref you installed).
+      description: The dsh-param-repair version (`npm ls dsh-param-repair`, or the git ref you installed).
       placeholder: '0.1.0'
     validations:
       required: true
@@ -33,7 +33,7 @@ body:
       label: Steps to reproduce
       description: Minimal steps that trigger the bug, including the tool call or command used.
       placeholder: |
-        1. Mount dsh-translate and call fix_json with ...
+        1. Mount dsh-param-repair and call fix_json with ...
         2. Observe ...
     validations:
       required: true

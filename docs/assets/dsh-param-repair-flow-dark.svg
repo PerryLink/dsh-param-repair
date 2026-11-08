@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="dsh-translate data flow">
-<title>dsh-translate data flow</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-label="dsh-param-repair data flow">
+<title>dsh-param-repair data flow</title>
 <rect width="1200" height="430" rx="18" fill="#0d1117"/>
-<text x="60" y="58" fill="#f0f6fc" font-family="ui-sans-serif,system-ui,sans-serif" font-size="30" font-weight="700">dsh-translate</text>
+<text x="60" y="58" fill="#f0f6fc" font-family="ui-sans-serif,system-ui,sans-serif" font-size="30" font-weight="700">dsh-param-repair</text>
 <text x="60" y="92" fill="#8b949e" font-family="ui-monospace,monospace" font-size="16">tools/post-execute · /translate · fix_json</text>
 <line x1="60" y1="118" x2="1140" y2="118" stroke="#30363d"/>
 <text x="70" y="150" fill="#8b949e" font-family="ui-monospace,monospace" font-size="13">tools/post-execute</text>

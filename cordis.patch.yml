@@ -1,10 +1,10 @@
-# dsh-translate bundle patch: mount the translate/repair plugin.
+# dsh-param-repair bundle patch: mount the translate/repair plugin.
 #
 # Every key below is a Config field (Schemastery schema); invalid values fail
 # the profile load loudly. See README.md "Configuration" for the full table.
 - insert:
-    - id: dsh-translate
-      name: dsh-translate
+    - id: dsh-param-repair
+      name: dsh-param-repair
       config:
         # Master switch: false registers nothing at all.
         enabled: true

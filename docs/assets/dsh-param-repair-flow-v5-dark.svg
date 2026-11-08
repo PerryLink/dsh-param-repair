@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-label="dsh-translate: two independent faces - the /translate rosetta lookup and the tools/post-execute JSON repair state machine">
-<title>dsh-translate structure: parameter rosetta + deterministic JSON repair</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-label="dsh-param-repair: two independent faces - the /translate rosetta lookup and the tools/post-execute JSON repair state machine">
+<title>dsh-param-repair structure: parameter rosetta + deterministic JSON repair</title>
 <desc>Lane A: /translate reads the 13-parameter by 11-vendor rosetta table and returns a pair mapping. Lane B: tools/post-execute and fix_json extract a fence, parse, run a bounded strategy loop (escapeRepair, trailingComma, truncationClosure), complete required fields with null, validate against the supported schema subset, then accept a repaired value or call next() and keep the original.</desc>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#131a2a"/><stop offset="1" stop-color="#0c1016"/></linearGradient>
@@ -11,7 +11,7 @@
 </defs>
 <rect width="1100" height="660" rx="22" fill="url(#bg)"/>
 <rect width="1100" height="660" rx="22" fill="url(#dots)"/>
-<text x="56" y="56" fill="#eef1f8" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI','Noto Sans',sans-serif" font-size="30" font-weight="700">dsh-translate</text>
+<text x="56" y="56" fill="#eef1f8" font-family="ui-sans-serif,system-ui,-apple-system,'Segoe UI','Noto Sans',sans-serif" font-size="30" font-weight="700">dsh-param-repair</text>
 <text x="56" y="82" fill="#a7b0c5" font-family="ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="14">index.mjs · inject: commands + tools · pure host</text>
 <text x="1044" y="56" fill="#a7b0c5" font-family="ui-monospace,SFMono-Regular,'Cascadia Mono',Consolas,'Liberation Mono',monospace" font-size="14" text-anchor="end">no network · no model call · no build step</text>
 <line x1="56" y1="100" x2="1044" y2="100" stroke="#2c3852" stroke-width="1"/>

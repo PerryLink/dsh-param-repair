@@ -2,7 +2,7 @@
  * Data-driven rosetta table: the bundled JSON round-trips through validation,
  * an external snapshot can swap the table in place, and invalid overrides fail
  * loud without corrupting the previous table.
- * @module dsh-translate/test/rosetta-data.test
+ * @module dsh-param-repair/test/rosetta-data.test
  */
 
 import { test } from 'node:test'

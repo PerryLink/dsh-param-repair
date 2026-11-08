@@ -1,14 +1,14 @@
 [
   {
-    "path": "docs/assets/dsh-translate-hero.png",
+    "path": "docs/assets/dsh-param-repair-hero.png",
     "kind": "hero",
-    "alt": "dsh-translate terminal output",
-    "caption": "Real dsh-translate test run; test suite green."
+    "alt": "dsh-param-repair terminal output",
+    "caption": "Real dsh-param-repair test run; test suite green."
   },
   {
-    "path": "docs/assets/dsh-translate-demo.gif",
+    "path": "docs/assets/dsh-param-repair-demo.gif",
     "kind": "demo",
-    "alt": "Animated dsh-translate terminal session",
+    "alt": "Animated dsh-param-repair terminal session",
     "caption": "The same run, assembled line by line."
   }
 ]

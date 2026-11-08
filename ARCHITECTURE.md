@@ -1,6 +1,6 @@
 # ARCHITECTURE
 
-`dsh-translate` is a pure-host JS plugin with two independent surfaces that
+`dsh-param-repair` is a pure-host JS plugin with two independent surfaces that
 share two pure data/function libraries. There is no state beyond what Cordis
 owns, no I/O, and no network access.
 

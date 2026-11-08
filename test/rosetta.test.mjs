@@ -1,7 +1,7 @@
 /**
  * lib/rosetta.mjs regression suite: the upstream GPT-Rosetta-Stone adapter
  * and mapping tests converted to JS, plus the extended-row behavior contract.
- * @module dsh-translate/test/rosetta.test
+ * @module dsh-param-repair/test/rosetta.test
  */
 
 import { test } from 'node:test'

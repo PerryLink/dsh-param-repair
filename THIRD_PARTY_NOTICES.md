@@ -1,6 +1,6 @@
 # Third-party notices
 
-`dsh-translate` ports two upstream projects by PerryLink, both Apache-2.0:
+`dsh-param-repair` ports two upstream projects by PerryLink, both Apache-2.0:
 
 | Upstream | Version source | License | Ported into |
 |---|---|---|---|

@@ -22,7 +22,7 @@ for (let i = 1; i < FILES.length; i++) {
   if (sectionCount(text) !== expectedSections) {
     failures.push(`${FILES[i]}: ${sectionCount(text)} '## ' sections, expected ${expectedSections}`)
   }
-  if (!text.includes('dsh plugin --profile web add dsh-translate')) {
+  if (!text.includes('dsh plugin --profile web add dsh-param-repair')) {
     failures.push(`${FILES[i]} is missing the install command`)
   }
   for (const key of REQUIRED_CONFIG_KEYS) {

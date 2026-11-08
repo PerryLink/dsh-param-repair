@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the dsh-translate README artwork (docs/assets/).
+"""Generate the dsh-param-repair README artwork (docs/assets/).
 
 Outputs (idempotent overwrite):
-  dsh-translate-hero-{zh,en}-{light,dark}.webp
+  dsh-param-repair-hero-{zh,en}-{light,dark}.webp
       1440x576 hero banner drawn with Pillow. Left column: kicker, title,
       two value lines, subtitle, meta, footer. Right side: the two semantic
       motifs of this plugin - a 13 (canonical params) x 11 (vendors) mapping
       lattice with one highlighted query, and a deterministic JSON repair
       card (broken tokens + the four strategy chips + schema check).
-  dsh-translate-flow-v5-{light,dark}.svg
+  dsh-param-repair-flow-v5-{light,dark}.svg
       1100x660 hand-written structure diagram. Two independent lanes:
       A = the /translate command face (rosetta table lookup), B = the
       tools/post-execute + fix_json state machine (claim guard, fence/parse,
@@ -16,7 +16,7 @@ Outputs (idempotent overwrite):
       accept | next()). Text inside the SVG is command/config tokens plus
       short English labels only, so all five README languages share it.
 
-The old single-skin dsh-translate-flow.svg / -hero.png / demo files are left
+The old single-skin dsh-param-repair-flow.svg / -hero.png / demo files are left
 on disk on purpose (external links), but the five READMEs reference only the
 new files.
 
@@ -40,15 +40,21 @@ OUT = os.path.join(ROOT, "docs", "assets")
 # ---------------------------------------------------------------------------
 FONT_CANDIDATES = {
     "regular": [r"C:\Windows\Fonts\msyh.ttc",
+                "/mnt/c/Windows/Fonts/msyh.ttc",
                 r"C:\Windows\Fonts\Deng.ttf",
+                "/mnt/c/Windows/Fonts/Deng.ttf",
                 "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
                 "/System/Library/Fonts/PingFang.ttc"],
     "bold": [r"C:\Windows\Fonts\msyhbd.ttc",
+             "/mnt/c/Windows/Fonts/msyhbd.ttc",
              r"C:\Windows\Fonts\msyh.ttc",
+             "/mnt/c/Windows/Fonts/msyh.ttc",
              "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
              "/System/Library/Fonts/PingFang.ttc"],
     "mono": [r"C:\Windows\Fonts\consola.ttf",
+             "/mnt/c/Windows/Fonts/consola.ttf",
              r"C:\Windows\Fonts\msyh.ttc",
+             "/mnt/c/Windows/Fonts/msyh.ttc",
              "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"],
 }
 FONTS = {}
@@ -320,7 +326,7 @@ HERO_COPY = {
         line2="坏 JSON 当场修好，修不动就原样放行",
         subtitle="纯主机端 · 零网络 · 零模型调用 · 零构建",
         meta="Apache-2.0 · DSH ≥0.2.1 <0.3.0 · Node ^22.19 || ≥24.9",
-        footer="github.com/PerryLink/dsh-translate",
+        footer="github.com/PerryLink/dsh-param-repair",
         version="v0.2.25 · Apache-2.0",
     ),
     "en": dict(
@@ -329,7 +335,7 @@ HERO_COPY = {
         line2="Broken JSON fixed; unrepairable untouched.",
         subtitle="Pure host · no network · no model calls",
         meta="Apache-2.0 · DSH ≥0.2.1 <0.3.0 · Node ^22.19 || ≥24.9",
-        footer="github.com/PerryLink/dsh-translate",
+        footer="github.com/PerryLink/dsh-param-repair",
         version="v0.2.25 · Apache-2.0",
     ),
 }
@@ -354,7 +360,7 @@ def build_hero(lang: str, skin: str) -> Image.Image:
     # title + accent bar
     d.rounded_rectangle([sc(76), sc(158), sc(81), sc(236)], radius=sc(2.5),
                         fill=p["accent"])
-    text(d, (100, 236), "dsh-translate", font("bold", 92), p["text"])
+    text(d, (100, 236), "dsh-param-repair", font("bold", 92), p["text"])
 
     # two value lines
     f1 = fit_font(d, "regular", 27, copy["line1"], 650)
@@ -430,9 +436,9 @@ def flow_svg(skin: str) -> str:
     parts = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" '
         'viewBox="0 0 1100 660" role="img" '
-        'aria-label="dsh-translate: two independent faces - the /translate '
+        'aria-label="dsh-param-repair: two independent faces - the /translate '
         'rosetta lookup and the tools/post-execute JSON repair state machine">',
-        '<title>dsh-translate structure: parameter rosetta + deterministic JSON repair</title>',
+        '<title>dsh-param-repair structure: parameter rosetta + deterministic JSON repair</title>',
         '<desc>Lane A: /translate reads the 13-parameter by 11-vendor rosetta '
         'table and returns a pair mapping. Lane B: tools/post-execute and '
         'fix_json extract a fence, parse, run a bounded strategy loop '
@@ -458,7 +464,7 @@ def flow_svg(skin: str) -> str:
         '<rect width="1100" height="660" rx="22" fill="url(#bg)"/>',
         '<rect width="1100" height="660" rx="22" fill="url(#dots)"/>',
         # header
-        txt(56, 56, "dsh-translate", None, size=30, weight="700"),
+        txt(56, 56, "dsh-param-repair", None, size=30, weight="700"),
         txt(56, 82, "index.mjs · inject: commands + tools · pure host", None,
             size=14, fill=SUB, mono=True),
         txt(1044, 56, "no network · no model call · no build step", None,
@@ -616,11 +622,11 @@ def main() -> None:
         for skin in ("light", "dark"):
             img = build_hero(lang, skin)
             path = os.path.join(
-                OUT, f"dsh-translate-hero-{lang}-{skin}.webp")
+                OUT, f"dsh-param-repair-hero-{lang}-{skin}.webp")
             img.save(path, "WEBP", quality=90, method=6)
             print(f"wrote {os.path.relpath(path, ROOT)}")
     for skin in ("light", "dark"):
-        path = os.path.join(OUT, f"dsh-translate-flow-v5-{skin}.svg")
+        path = os.path.join(OUT, f"dsh-param-repair-flow-v5-{skin}.svg")
         with open(path, "w", encoding="utf-8", newline="\n") as fh:
             fh.write(flow_svg(skin))
         print(f"wrote {os.path.relpath(path, ROOT)}")

@@ -1,11 +1,11 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-translate-hero-en-dark.webp">
-  <img src="docs/assets/dsh-translate-hero-en-light.webp" width="100%" alt="Banner do dsh-translate: à esquerda o título e a proposta de valor; à direita, a grade de 13 parâmetros × 11 provedores e o cartão de reparo determinístico de JSON">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-param-repair-hero-en-dark.webp">
+  <img src="docs/assets/dsh-param-repair-hero-en-light.webp" width="100%" alt="Banner do dsh-param-repair: à esquerda o título e a proposta de valor; à direita, a grade de 13 parâmetros × 11 provedores e o cartão de reparo determinístico de JSON">
 </picture>
 
-# dsh-translate
+# dsh-param-repair
 
 **Faça a mesma requisição funcionar em todos os provedores: o JSON quebrado é corrigido na hora, nunca inventando dados.**
 
@@ -15,34 +15,34 @@ Um plugin puramente host-side para o DeepSeek Harness: o `/translate` mapeia 13 
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
 [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1%20%3C0.3.0-4B67B4?style=flat-square&labelColor=2B3245)](#compatibilidade)
-[![npm](https://img.shields.io/npm/v/dsh-translate?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-translate)
-[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-translate/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-translate/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/dsh-param-repair?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-param-repair)
+[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-param-repair/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-param-repair/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%5E22.19%20%7C%7C%20%3E%3D24.9-339933?style=flat-square&labelColor=2B3245)](#compatibilidade)
 
-[![Stars](https://img.shields.io/github/stars/PerryLink/dsh-translate?style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-translate/stargazers)
-[![npm downloads](https://img.shields.io/npm/dm/dsh-translate?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-translate)
-[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-translate?metric=downloads)](https://dshfind.com/plugins/PerryLink/dsh-translate?ref=badge)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/PerryLink/dsh-translate/badge)](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-translate)
+[![Stars](https://img.shields.io/github/stars/PerryLink/dsh-param-repair?style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-param-repair/stargazers)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-param-repair?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-param-repair)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-param-repair?metric=downloads)](https://dshfind.com/plugins/PerryLink/dsh-param-repair?ref=badge)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/PerryLink/dsh-param-repair/badge)](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-param-repair)
 [![DSH Market](https://img.shields.io/badge/DSH_Market-listed-4B67B4?style=flat-square&labelColor=2B3245)](https://dsh.market/)
-[![Gitee](https://img.shields.io/badge/Gitee-mirror-C71D23?style=flat-square&labelColor=2B3245&logo=gitee)](https://gitee.com/perrylink/dsh-translate)
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-C71D23?style=flat-square&labelColor=2B3245&logo=gitee)](https://gitee.com/perrylink/dsh-param-repair)
 
 ```sh
-dsh plugin --profile <name> add dsh-translate
+dsh plugin --profile <name> add dsh-param-repair
 ```
 
 </div>
 
-<sub>Plugin da comunidade, sem afiliação com a DeepSeek. Repositório canônico: <https://github.com/PerryLink/dsh-translate> (o Gitee é um espelho).</sub>
+<sub>Plugin da comunidade, sem afiliação com a DeepSeek. Repositório canônico: <https://github.com/PerryLink/dsh-param-repair> (o Gitee é um espelho).</sub>
 
 ## O que é
 
-O `dsh-translate` faz duas coisas independentes. A primeira é a **tradução de parâmetros entre provedores**: parâmetros canônicos como `temperature`, `top_p`, `max_tokens`, `stop` e `system` são mapeados para os nomes de campo reais de 11 provedores (OpenAI, ERNIE, Qwen, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, Groq, Azure); consulte um mapeamento com `/translate openai ernie max_tokens` ou converta uma requisição padrão inteira com `transformRequest` de `lib/rosetta.mjs`. A segunda é o **reparo determinístico de JSON**: quando um resultado de ferramenta bem-sucedido carrega JSON quebrado como texto, o listener de `tools/post-execute` extrai o bloco, analisa e aplica quatro estratégias de texto até a carga passar na validação de schema; se não for reparável, o valor original segue intacto e nenhum dado é inventado.
+O `dsh-param-repair` faz duas coisas independentes. A primeira é a **tradução de parâmetros entre provedores**: parâmetros canônicos como `temperature`, `top_p`, `max_tokens`, `stop` e `system` são mapeados para os nomes de campo reais de 11 provedores (OpenAI, ERNIE, Qwen, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, Groq, Azure); consulte um mapeamento com `/translate openai ernie max_tokens` ou converta uma requisição padrão inteira com `transformRequest` de `lib/rosetta.mjs`. A segunda é o **reparo determinístico de JSON**: quando um resultado de ferramenta bem-sucedido carrega JSON quebrado como texto, o listener de `tools/post-execute` extrai o bloco, analisa e aplica quatro estratégias de texto até a carga passar na validação de schema; se não for reparável, o valor original segue intacto e nenhum dado é inventado.
 
 O "translate" do nome é uma tabela de correspondência de parâmetros, não tradução automática. Host puro, ESM puro, sem etapa de build: `index.mjs` e `lib/` são o artefato publicado.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-translate-flow-v5-dark.svg">
-  <img src="docs/assets/dsh-translate-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-translate: acima, a face de comando /translate lê a tabela 13 × 11 e devolve um mapeamento; abaixo, a máquina de estados de reparo de tools/post-execute e fix_json — porta de reivindicação, extração e análise, laço de estratégias ≤ maxSteps, preenchimento null de campos obrigatórios, validação do subconjunto de schema e, ao final, accept ou next() mantendo o original">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-param-repair-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-param-repair-flow-v5-light.svg" width="100%" alt="Estrutura do dsh-param-repair: acima, a face de comando /translate lê a tabela 13 × 11 e devolve um mapeamento; abaixo, a máquina de estados de reparo de tools/post-execute e fix_json — porta de reivindicação, extração e análise, laço de estratégias ≤ maxSteps, preenchimento null de campos obrigatórios, validação do subconjunto de schema e, ao final, accept ou next() mantendo o original">
 </picture>
 
 ## Instalação em três passos
@@ -50,12 +50,12 @@ O "translate" do nome é uma tabela de correspondência de parâmetros, não tra
 1. **Instalar** (escolha uma via):
 
    ```sh
-   # canal git (último main; equivale a git+https://github.com/PerryLink/dsh-translate.git)
-   dsh plugin --profile web add github:PerryLink/dsh-translate
+   # canal git (último main; equivale a git+https://github.com/PerryLink/dsh-param-repair.git)
+   dsh plugin --profile web add github:PerryLink/dsh-param-repair
    # canal npm (versões publicadas)
-   dsh plugin --profile web add dsh-translate
+   dsh plugin --profile web add dsh-param-repair
    # canal tarball: após pnpm pack neste repositório
-   dsh plugin --profile web add ./dsh-translate-<version>.tgz
+   dsh plugin --profile web add ./dsh-param-repair-<version>.tgz
    ```
 
    Sem etapa de build: `index.mjs` e `lib/` são o artefato publicado.
@@ -64,8 +64,8 @@ O "translate" do nome é uma tabela de correspondência de parâmetros, não tra
 
    ```yaml
    - insert:
-       - id: dsh-translate
-         name: dsh-translate
+       - id: dsh-param-repair
+         name: dsh-param-repair
          config:
            enabled: true
            repair:
@@ -77,7 +77,7 @@ O "translate" do nome é uma tabela de correspondência de parâmetros, não tra
 3. **Verificar que está ativo**:
 
    ```sh
-   dsh --profile web --dump-config | grep -A2 'id: dsh-translate'
+   dsh --profile web --dump-config | grep -A2 'id: dsh-param-repair'
    ```
 
    ```
@@ -86,7 +86,7 @@ O "translate" do nome é uma tabela de correspondência de parâmetros, não tra
      max_tokens: max_tokens → max_output_tokens
    ```
 
-**Desinstalar**: `dsh plugin --profile web remove dsh-translate` (ou remova a linha do patch do perfil).
+**Desinstalar**: `dsh plugin --profile web remove dsh-param-repair` (ou remova a linha do patch do perfil).
 
 <details>
 <summary>Instalar pelo mercado do DSH Desktop</summary>
@@ -139,7 +139,7 @@ openai (OpenAI) → ernie (Baidu ERNIE (Wenxin)):
 fix_json failed (INVALID_SCHEMA): #.pattern is not a supported keyword (subset: type/oneOf/properties/required/additionalProperties/items/enum/const)
 ```
 
-*Observed from `plugins/dsh-translate/index.mjs:486-488; plugins/dsh-translate/lib/fix.mjs:241; plugins/dsh-translate/test/index.test.mjs:347-352`*
+*Observed from `plugins/dsh-param-repair/index.mjs:486-488; plugins/dsh-param-repair/lib/fix.mjs:241; plugins/dsh-param-repair/test/index.test.mjs:347-352`*
 
 **Exemplos curtos**: `fix_json` · `/translate openai ernie max_tokens`
 
@@ -184,8 +184,8 @@ Exemplo de sobrescrita no patch do perfil:
 
 ```yaml
 - insert:
-    - id: dsh-translate
-      name: dsh-translate
+    - id: dsh-param-repair
+      name: dsh-param-repair
       config:
         enabled: true
         repair:
@@ -290,12 +290,12 @@ Evidência estática: o `dsh-plugin-doctor` K10–K13 reporta `pass` em todas as
 
 ## Ecossistema e qualidade
 
-- [Espelho no Gitee](https://gitee.com/perrylink/dsh-translate) (espelho sincronizado; o GitHub continua canônico)
-- [Página no dshfind](https://dshfind.com/plugins/PerryLink/dsh-translate) (instalações e ranking)
-- [Relatório OpenSSF Scorecard](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-translate) (gerado por [.github/workflows/scorecard.yml](.github/workflows/scorecard.yml))
+- [Espelho no Gitee](https://gitee.com/perrylink/dsh-param-repair) (espelho sincronizado; o GitHub continua canônico)
+- [Página no dshfind](https://dshfind.com/plugins/PerryLink/dsh-param-repair) (instalações e ranking)
+- [Relatório OpenSSF Scorecard](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-param-repair) (gerado por [.github/workflows/scorecard.yml](.github/workflows/scorecard.yml))
 - [Relatório de verificação do dsh-plugin-doctor](https://github.com/PerryLink/dsh-plugin-doctor#verified-徽章) (K10–K13 todos `pass`)
 - [DSH Market](https://dsh.market/) (listado)
-- **Canal da loja 1024**: rode `npm i -g dsh1024` uma vez e depois `dsh1024 plugin --profile web add dsh-translate` (conta para o ranking de instalações do [deepseek1024.com](https://deepseek1024.com))
+- **Canal da loja 1024**: rode `npm i -g dsh1024` uma vez e depois `dsh1024 plugin --profile web add dsh-param-repair` (conta para o ranking de instalações do [deepseek1024.com](https://deepseek1024.com))
 - [Base de conhecimento do ecossistema](https://perrylink.github.io/dsh-plugin-guide/): guia de desenvolvimento de plugins · dados medidos de seleção · critérios de manutenção
 
 ## Desenvolvimento
@@ -310,7 +310,7 @@ node scripts/check-readme-sync.mjs  # portão de sincronização dos cinco READM
 pnpm pack                       # o tarball publicado
 ```
 
-Sem etapa de build: ESM puro, `index.mjs` e `lib/` são o artefato publicado. As imagens são geradas por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow para os heroes, SVG escrito à mão para o diagrama) e podem ser regeradas: `python scripts/gen-readme-assets.py` escreve `docs/assets/dsh-translate-hero-{zh,en}-{light,dark}.webp` e `docs/assets/dsh-translate-flow-v5-{light,dark}.svg`.
+Sem etapa de build: ESM puro, `index.mjs` e `lib/` são o artefato publicado. As imagens são geradas por [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) (Pillow para os heroes, SVG escrito à mão para o diagrama) e podem ser regeradas: `python scripts/gen-readme-assets.py` escreve `docs/assets/dsh-param-repair-hero-{zh,en}-{light,dark}.webp` e `docs/assets/dsh-param-repair-flow-v5-{light,dark}.svg`.
 
 Topics: `dsh`, `dsh-plugin`, `deepseek-harness`, `deepseek`, `cordis`, `json-repair`, `schema-validation`, `parameter-mapping`, `llm-api`, `tooling`
 
@@ -410,7 +410,7 @@ Este projeto faz parte da família de plugins do DeepSeek Harness mantida pela [
 | **[dsh-tender-matrix](https://github.com/PerryLink/dsh-tender-matrix)** |  |
 | **[dsh-test-drive](https://github.com/PerryLink/dsh-test-drive)** |  |
 | **[dsh-ticktick](https://github.com/PerryLink/dsh-ticktick)** | 🚫 APOSENTADO (repo arquivado) |
-| **[dsh-translate](https://github.com/PerryLink/dsh-translate)** |  |
+| **[dsh-param-repair](https://github.com/PerryLink/dsh-param-repair)** |  |
 | **[dsh-warranty-calc](https://github.com/PerryLink/dsh-warranty-calc)** |  |
 | **[dsh-budget](https://github.com/PerryLink/dsh-budget)** |  |
 | **[dsh-claude-move](https://github.com/PerryLink/dsh-claude-move)** |  |
@@ -425,6 +425,6 @@ Este projeto faz parte da família de plugins do DeepSeek Harness mantida pela [
 
 ## Licença
 
-[LICENSE](LICENSE) (Apache License 2.0) © 2026 dsh-translate contributors
+[LICENSE](LICENSE) (Apache License 2.0) © 2026 dsh-param-repair contributors
 
 <p align="center"><sub>Apache-2.0 · Plugin da comunidade, sem afiliação com a DeepSeek.</sub></p>

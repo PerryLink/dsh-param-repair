@@ -1,5 +1,5 @@
 /**
- * `dsh-translate` — vendor parameter translation and deterministic JSON
+ * `dsh-param-repair` — vendor parameter translation and deterministic JSON
  * repair for DeepSeek Harness.
  *
  * Two surfaces, one bundle:
@@ -18,7 +18,7 @@
  *
  * JS form (pure host): root `index.mjs` is the only host face.
  *
- * @module dsh-translate
+ * @module dsh-param-repair
  */
 
 import z from '@deepseek-ai/schemastery'
@@ -42,7 +42,7 @@ import {
 } from './lib/fix.mjs'
 import { sanitizeDiff } from './lib/sanitize.mjs'
 
-export const name = 'dsh-translate'
+export const name = 'dsh-param-repair'
 
 /** Hard services: the command surface and the tool registry. */
 export const inject = ['commands', 'tools']
@@ -106,15 +106,15 @@ export const Config = z.object({
 export function resolveConfig(raw) {
   const config = /** @type {Record<string, any>} */ (raw ?? {})
   const enabled = config.enabled ?? true
-  if (typeof enabled !== 'boolean') throw new TypeError('dsh-translate: config.enabled must be a boolean')
+  if (typeof enabled !== 'boolean') throw new TypeError('dsh-param-repair: config.enabled must be a boolean')
 
   const repairRaw = config.repair ?? {}
   const repairEnabled = repairRaw.enabled ?? true
-  if (typeof repairEnabled !== 'boolean') throw new TypeError('dsh-translate: config.repair.enabled must be a boolean')
+  if (typeof repairEnabled !== 'boolean') throw new TypeError('dsh-param-repair: config.repair.enabled must be a boolean')
 
   const toolNames = Array.isArray(repairRaw.toolNames) ? [...repairRaw.toolNames] : []
   for (const entry of toolNames) {
-    if (typeof entry !== 'string') throw new TypeError('dsh-translate: config.repair.toolNames entries must be strings')
+    if (typeof entry !== 'string') throw new TypeError('dsh-param-repair: config.repair.toolNames entries must be strings')
   }
 
   const strategiesRaw = repairRaw.strategies ?? {}
@@ -125,31 +125,31 @@ export function resolveConfig(raw) {
     fieldCompletion: strategiesRaw.fieldCompletion ?? true,
   }
   for (const [key, value] of Object.entries(strategies)) {
-    if (typeof value !== 'boolean') throw new TypeError(`dsh-translate: config.repair.strategies.${key} must be a boolean`)
+    if (typeof value !== 'boolean') throw new TypeError(`dsh-param-repair: config.repair.strategies.${key} must be a boolean`)
   }
 
   const maxSteps = repairRaw.maxSteps ?? 8
   if (!Number.isInteger(maxSteps) || maxSteps < 1 || maxSteps > 64) {
-    throw new TypeError('dsh-translate: config.repair.maxSteps must be an integer between 1 and 64')
+    throw new TypeError('dsh-param-repair: config.repair.maxSteps must be an integer between 1 and 64')
   }
 
   const diffMaxChars = config.diffMaxChars ?? 200
   if (!Number.isInteger(diffMaxChars) || diffMaxChars < 1) {
-    throw new TypeError('dsh-translate: config.diffMaxChars must be a positive integer')
+    throw new TypeError('dsh-param-repair: config.diffMaxChars must be a positive integer')
   }
   const diffMaxEntries = config.diffMaxEntries ?? 50
   if (!Number.isInteger(diffMaxEntries) || diffMaxEntries < 1) {
-    throw new TypeError('dsh-translate: config.diffMaxEntries must be a positive integer')
+    throw new TypeError('dsh-param-repair: config.diffMaxEntries must be a positive integer')
   }
 
   const registerCommand = config.registerCommand ?? true
-  if (typeof registerCommand !== 'boolean') throw new TypeError('dsh-translate: config.registerCommand must be a boolean')
+  if (typeof registerCommand !== 'boolean') throw new TypeError('dsh-param-repair: config.registerCommand must be a boolean')
   const registerTool = config.registerTool ?? true
-  if (typeof registerTool !== 'boolean') throw new TypeError('dsh-translate: config.registerTool must be a boolean')
+  if (typeof registerTool !== 'boolean') throw new TypeError('dsh-param-repair: config.registerTool must be a boolean')
 
   const rosettaDataPath = config.rosettaDataPath
   if (rosettaDataPath !== undefined && (typeof rosettaDataPath !== 'string' || rosettaDataPath.trim().length === 0)) {
-    throw new TypeError('dsh-translate: config.rosettaDataPath must be a non-empty string')
+    throw new TypeError('dsh-param-repair: config.rosettaDataPath must be a non-empty string')
   }
 
   return Object.freeze({
@@ -331,7 +331,7 @@ export function translateOverview() {
   const vendors = vendorIds().map(id => `- ${id} (${vendorName(id)})`).join('\n')
   const params = paramList().join(', ')
   return [
-    'dsh-translate: vendor parameter translation table.',
+    'dsh-param-repair: vendor parameter translation table.',
     '',
     'Usage:',
     '  /translate                this overview',
@@ -540,7 +540,7 @@ export function apply(ctx, config) {
       const snapshot = loadRosettaData(resolved.rosettaDataPath)
       logger.info(`rosetta data overridden from ${resolved.rosettaDataPath} (${snapshot.vendors.length} vendors, ${snapshot.params.length} params)`)
     } catch (error) {
-      throw new Error(`dsh-translate: failed to load rosetta data from ${resolved.rosettaDataPath}: ${error instanceof Error ? error.message : String(error)}`)
+      throw new Error(`dsh-param-repair: failed to load rosetta data from ${resolved.rosettaDataPath}: ${error instanceof Error ? error.message : String(error)}`)
     }
   }
 
@@ -551,11 +551,11 @@ export function apply(ctx, config) {
       description: 'Vendor parameter translation table: /translate [vendors | params | <from> <to> [param]]',
       input: { hint: '[vendors | params | <from> <to> [param]]' },
       handler: invocation => handleTranslateCommand(invocation.rawInput),
-    }), 'dsh-translate: /translate command')
+    }), 'dsh-param-repair: /translate command')
   }
 
   if (resolved.registerTool) {
-    ctx.effect(() => ctx.tools.register(/** @type {any} */ (fixJsonTool(resolved))), 'dsh-translate: fix_json tool')
+    ctx.effect(() => ctx.tools.register(/** @type {any} */ (fixJsonTool(resolved))), 'dsh-param-repair: fix_json tool')
   }
 
   // Consumer — the post-execute listener consumes tool results and rewrites repaired canonical values.

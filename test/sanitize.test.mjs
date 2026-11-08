@@ -2,7 +2,7 @@
  * lib/sanitize.mjs extreme cases: bounded fragments, hostile payloads, and
  * the truncation flags consumers rely on to never mistake a bounded diff for
  * a complete one.
- * @module dsh-translate/test/sanitize.test
+ * @module dsh-param-repair/test/sanitize.test
  */
 
 import { test } from 'node:test'

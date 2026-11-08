@@ -1,11 +1,11 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-translate-hero-zh-dark.webp">
-  <img src="docs/assets/dsh-translate-hero-zh-light.webp" width="100%" alt="dsh-translate 横幅：左侧为插件名与两句价值说明，右侧为 13 个规范参数 × 11 家厂商的映射点阵，以及把坏 JSON 确定性修到能过 schema 校验的修复卡片">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-param-repair-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-param-repair-hero-zh-light.webp" width="100%" alt="dsh-param-repair 横幅：左侧为插件名与两句价值说明，右侧为 13 个规范参数 × 11 家厂商的映射点阵，以及把坏 JSON 确定性修到能过 schema 校验的修复卡片">
 </picture>
 
-# dsh-translate
+# dsh-param-repair
 
 **让同一份请求跑通每一家厂商——坏 JSON 当场修好，绝不编造数据。**
 
@@ -15,34 +15,34 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
 [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1%20%3C0.3.0-4B67B4?style=flat-square&labelColor=2B3245)](#兼容性)
-[![npm](https://img.shields.io/npm/v/dsh-translate?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-translate)
-[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-translate/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-translate/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/dsh-param-repair?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-param-repair)
+[![CI](https://img.shields.io/github/actions/workflow/status/PerryLink/dsh-param-repair/ci.yml?branch=main&label=CI&style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-param-repair/actions/workflows/ci.yml)
 [![Node](https://img.shields.io/badge/node-%5E22.19%20%7C%7C%20%3E%3D24.9-339933?style=flat-square&labelColor=2B3245)](#兼容性)
 
-[![Stars](https://img.shields.io/github/stars/PerryLink/dsh-translate?style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-translate/stargazers)
-[![npm downloads](https://img.shields.io/npm/dm/dsh-translate?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-translate)
-[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-translate?metric=downloads)](https://dshfind.com/plugins/PerryLink/dsh-translate?ref=badge)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/PerryLink/dsh-translate/badge)](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-translate)
+[![Stars](https://img.shields.io/github/stars/PerryLink/dsh-param-repair?style=flat-square&labelColor=2B3245)](https://github.com/PerryLink/dsh-param-repair/stargazers)
+[![npm downloads](https://img.shields.io/npm/dm/dsh-param-repair?style=flat-square&labelColor=2B3245&color=CB3837)](https://www.npmjs.com/package/dsh-param-repair)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-param-repair?metric=downloads)](https://dshfind.com/plugins/PerryLink/dsh-param-repair?ref=badge)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/PerryLink/dsh-param-repair/badge)](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-param-repair)
 [![DSH Market](https://img.shields.io/badge/DSH_Market-listed-4B67B4?style=flat-square&labelColor=2B3245)](https://dsh.market/)
-[![Gitee](https://img.shields.io/badge/Gitee-mirror-C71D23?style=flat-square&labelColor=2B3245&logo=gitee)](https://gitee.com/perrylink/dsh-translate)
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-C71D23?style=flat-square&labelColor=2B3245&logo=gitee)](https://gitee.com/perrylink/dsh-param-repair)
 
 ```sh
-dsh plugin --profile <name> add dsh-translate
+dsh plugin --profile <name> add dsh-param-repair
 ```
 
 </div>
 
-<sub>社区插件，与 DeepSeek 官方无关。唯一仓库：<https://github.com/PerryLink/dsh-translate>（Gitee 为镜像）。</sub>
+<sub>社区插件，与 DeepSeek 官方无关。唯一仓库：<https://github.com/PerryLink/dsh-param-repair>（Gitee 为镜像）。</sub>
 
 ## 它是什么
 
-`dsh-translate` 管两件事，彼此独立。第一件是**厂商参数翻译**：把 `temperature`、`top_p`、`max_tokens`、`stop`、`system` 这类规范参数，按 11 家厂商的真实字段名对过去（OpenAI、ERNIE、Qwen、Anthropic、Google、DeepSeek、Mistral、Cohere、xAI、Groq、Azure），既可以用 `/translate openai ernie max_tokens` 查单条，也可以让 `lib/rosetta.mjs` 的 `transformRequest` 整包转换一个标准请求。第二件是**确定性 JSON 修复**：成功的工具结果里如果带着一段坏 JSON，`tools/post-execute` 监听器会先提取围栏、再解析、再跑四种文本策略，直到它能过 schema 校验——修不动就原样放行，绝不编造数值。
+`dsh-param-repair` 管两件事，彼此独立。第一件是**厂商参数翻译**：把 `temperature`、`top_p`、`max_tokens`、`stop`、`system` 这类规范参数，按 11 家厂商的真实字段名对过去（OpenAI、ERNIE、Qwen、Anthropic、Google、DeepSeek、Mistral、Cohere、xAI、Groq、Azure），既可以用 `/translate openai ernie max_tokens` 查单条，也可以让 `lib/rosetta.mjs` 的 `transformRequest` 整包转换一个标准请求。第二件是**确定性 JSON 修复**：成功的工具结果里如果带着一段坏 JSON，`tools/post-execute` 监听器会先提取围栏、再解析、再跑四种文本策略，直到它能过 schema 校验——修不动就原样放行，绝不编造数值。
 
 名字里的“翻译”指的是厂商参数映射，不是机器翻译。纯主机端、纯 ESM、零构建步骤，`index.mjs` 与 `lib/` 即发布产物。
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-translate-flow-v5-dark.svg">
-  <img src="docs/assets/dsh-translate-flow-v5-light.svg" width="100%" alt="dsh-translate 结构图：上栏 /translate 命令面读取 13 × 11 的 rosetta 表并给出单参数映射；下栏 tools/post-execute 与 fix_json 的修复状态机——认领门、围栏提取与解析、≤ maxSteps 的策略循环、必填字段 null 补全、schema 子集校验，最后 accept 或 next() 原样保留">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-param-repair-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-param-repair-flow-v5-light.svg" width="100%" alt="dsh-param-repair 结构图：上栏 /translate 命令面读取 13 × 11 的 rosetta 表并给出单参数映射；下栏 tools/post-execute 与 fix_json 的修复状态机——认领门、围栏提取与解析、≤ maxSteps 的策略循环、必填字段 null 补全、schema 子集校验，最后 accept 或 next() 原样保留">
 </picture>
 
 ## 三步上手
@@ -50,12 +50,12 @@ dsh plugin --profile <name> add dsh-translate
 1. **安装**（三选一）：
 
    ```sh
-   # git 通道（最新 main；等价于 git+https://github.com/PerryLink/dsh-translate.git）
-   dsh plugin --profile web add github:PerryLink/dsh-translate
+   # git 通道（最新 main；等价于 git+https://github.com/PerryLink/dsh-param-repair.git）
+   dsh plugin --profile web add github:PerryLink/dsh-param-repair
    # npm 通道（已发布版本）
-   dsh plugin --profile web add dsh-translate
+   dsh plugin --profile web add dsh-param-repair
    # tarball 通道：本仓库 pnpm pack 后
-   dsh plugin --profile web add ./dsh-translate-<version>.tgz
+   dsh plugin --profile web add ./dsh-param-repair-<version>.tgz
    ```
 
    无构建步骤——`index.mjs` 与 `lib/` 即发布产物。
@@ -64,8 +64,8 @@ dsh plugin --profile <name> add dsh-translate
 
    ```yaml
    - insert:
-       - id: dsh-translate
-         name: dsh-translate
+       - id: dsh-param-repair
+         name: dsh-param-repair
          config:
            enabled: true
            repair:
@@ -77,7 +77,7 @@ dsh plugin --profile <name> add dsh-translate
 3. **验证已生效**：
 
    ```sh
-   dsh --profile web --dump-config | grep -A2 'id: dsh-translate'
+   dsh --profile web --dump-config | grep -A2 'id: dsh-param-repair'
    ```
 
    ```
@@ -86,7 +86,7 @@ dsh plugin --profile <name> add dsh-translate
      max_tokens: max_tokens → max_output_tokens
    ```
 
-**卸载**：`dsh plugin --profile web remove dsh-translate`（或从 profile patch 删掉该行）。
+**卸载**：`dsh plugin --profile web remove dsh-param-repair`（或从 profile patch 删掉该行）。
 
 <details>
 <summary>从 DSH Desktop 市场安装</summary>
@@ -139,7 +139,7 @@ openai (OpenAI) → ernie (Baidu ERNIE (Wenxin)):
 fix_json failed (INVALID_SCHEMA): #.pattern is not a supported keyword (subset: type/oneOf/properties/required/additionalProperties/items/enum/const)
 ```
 
-*Observed from `plugins/dsh-translate/index.mjs:486-488; plugins/dsh-translate/lib/fix.mjs:241; plugins/dsh-translate/test/index.test.mjs:347-352`*
+*Observed from `plugins/dsh-param-repair/index.mjs:486-488; plugins/dsh-param-repair/lib/fix.mjs:241; plugins/dsh-param-repair/test/index.test.mjs:347-352`*
 
 **简短示例**：`fix_json` · `/translate openai ernie max_tokens`
 
@@ -184,8 +184,8 @@ profile patch 中的覆盖示例：
 
 ```yaml
 - insert:
-    - id: dsh-translate
-      name: dsh-translate
+    - id: dsh-param-repair
+      name: dsh-param-repair
       config:
         enabled: true
         repair:
@@ -290,12 +290,12 @@ profile patch 中的覆盖示例：
 
 ## 生态与质量
 
-- [Gitee 镜像](https://gitee.com/perrylink/dsh-translate)（同步镜像，以 GitHub 为准）
-- [dshfind 插件页](https://dshfind.com/plugins/PerryLink/dsh-translate)（安装量与排名）
-- [OpenSSF Scorecard 报告](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-translate)（由 [.github/workflows/scorecard.yml](.github/workflows/scorecard.yml) 驱动）
+- [Gitee 镜像](https://gitee.com/perrylink/dsh-param-repair)（同步镜像，以 GitHub 为准）
+- [dshfind 插件页](https://dshfind.com/plugins/PerryLink/dsh-param-repair)（安装量与排名）
+- [OpenSSF Scorecard 报告](https://securityscorecards.dev/viewer/?uri=github.com/PerryLink/dsh-param-repair)（由 [.github/workflows/scorecard.yml](.github/workflows/scorecard.yml) 驱动）
 - [dsh-plugin-doctor 验证报告](https://github.com/PerryLink/dsh-plugin-doctor#verified-徽章)（K10–K13 全 `pass`）
 - [DSH Market](https://dsh.market/)（已上架）
-- **1024 商店渠道**：先 `npm i -g dsh1024`，再 `dsh1024 plugin --profile web add dsh-translate`（计入 [deepseek1024.com](https://deepseek1024.com) 安装排行）
+- **1024 商店渠道**：先 `npm i -g dsh1024`，再 `dsh1024 plugin --profile web add dsh-param-repair`（计入 [deepseek1024.com](https://deepseek1024.com) 安装排行）
 - [生态实测知识库](https://perrylink.github.io/dsh-plugin-guide/)：插件开发指南 · 选型实测数据 · 维护取舍判据
 
 ## 开发
@@ -310,7 +310,7 @@ node scripts/check-readme-sync.mjs  # 五语 README 同步门（CI 同样执行�
 pnpm pack                       # 发布用 tarball
 ```
 
-无构建步骤：纯 ESM，`index.mjs` 与 `lib/` 即发布产物。配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Pillow 绘制 hero，手写 SVG 绘制结构图），可重复执行：`python scripts/gen-readme-assets.py`，产出 `docs/assets/dsh-translate-hero-{zh,en}-{light,dark}.webp` 与 `docs/assets/dsh-translate-flow-v5-{light,dark}.svg`。
+无构建步骤：纯 ESM，`index.mjs` 与 `lib/` 即发布产物。配图由 [`scripts/gen-readme-assets.py`](scripts/gen-readme-assets.py) 程序化生成（Pillow 绘制 hero，手写 SVG 绘制结构图），可重复执行：`python scripts/gen-readme-assets.py`，产出 `docs/assets/dsh-param-repair-hero-{zh,en}-{light,dark}.webp` 与 `docs/assets/dsh-param-repair-flow-v5-{light,dark}.svg`。
 
 Topics：`dsh`, `dsh-plugin`, `deepseek-harness`, `deepseek`, `cordis`, `json-repair`, `schema-validation`, `parameter-mapping`, `llm-api`, `tooling`
 
@@ -410,7 +410,7 @@ Topics：`dsh`, `dsh-plugin`, `deepseek-harness`, `deepseek`, `cordis`, `json-re
 | **[dsh-tender-matrix](https://github.com/PerryLink/dsh-tender-matrix)** |  |
 | **[dsh-test-drive](https://github.com/PerryLink/dsh-test-drive)** |  |
 | **[dsh-ticktick](https://github.com/PerryLink/dsh-ticktick)** | 🚫 已退役（仓库已归档） |
-| **[dsh-translate](https://github.com/PerryLink/dsh-translate)** |  |
+| **[dsh-param-repair](https://github.com/PerryLink/dsh-param-repair)** |  |
 | **[dsh-warranty-calc](https://github.com/PerryLink/dsh-warranty-calc)** |  |
 | **[dsh-budget](https://github.com/PerryLink/dsh-budget)** |  |
 | **[dsh-claude-move](https://github.com/PerryLink/dsh-claude-move)** |  |
@@ -425,6 +425,6 @@ Topics：`dsh`, `dsh-plugin`, `deepseek-harness`, `deepseek`, `cordis`, `json-re
 
 ## License
 
-[LICENSE](LICENSE)（Apache License 2.0）© 2026 dsh-translate contributors
+[LICENSE](LICENSE)（Apache License 2.0）© 2026 dsh-param-repair contributors
 
 <p align="center"><sub>Apache-2.0 · 社区插件，与 DeepSeek 无关。</sub></p>

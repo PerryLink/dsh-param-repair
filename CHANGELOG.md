@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.0] - 2026-11-08
+
+### Changed
+
+- **Renamed from `dsh-translate` to `dsh-param-repair`.** The old name read as machine translation, while this package only maps request parameters between 11 vendor dialects and repairs malformed JSON tool output deterministically. The npm name `dsh-translate` now belongs to the translation plugin; the 0.2.x releases stay installable from the registry and are marked deprecated with a pointer here.
+- **Nothing else moved.** The `/translate` command name, the `fix_json` tool name and input shape, the `translate/fix` audit event, every `Config` key, and the on-disk layout are unchanged. A profile that pinned `dsh-translate` migrates by reinstalling `dsh-param-repair` and replacing the package name in that row; every config value stays valid.
+- Repository, badges, install commands, and the five READMEs now use the new name; the artwork was regenerated from `scripts/gen-readme-assets.py`.
+
 ## [0.2.25] - 2026-11-05
 
 ### Changed

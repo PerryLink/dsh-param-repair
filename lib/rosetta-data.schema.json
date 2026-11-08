@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/PerryLink/dsh-translate/rosetta-data.schema.json",
-  "title": "dsh-translate rosetta vendor-parameter mapping data",
+  "$id": "https://github.com/PerryLink/dsh-param-repair/rosetta-data.schema.json",
+  "title": "dsh-param-repair rosetta vendor-parameter mapping data",
   "description": "Data document for the vendor parameter translation table: vendors, canonical parameters, and the per-parameter/per-vendor cells. The bundled lib/rosetta-data.json matches this schema; external overrides (config.rosettaDataPath) must too.",
   "type": "object",
   "additionalProperties": false,

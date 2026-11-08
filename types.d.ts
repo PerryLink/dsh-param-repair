@@ -1,15 +1,15 @@
 /**
- * Hand-written type declarations for the dsh-translate JS package.
+ * Hand-written type declarations for the dsh-param-repair JS package.
  * `tsconfig.check.json` (checkJs) validates index.mjs against these shapes;
  * consumers of the published package resolve `types` to this file.
- * @module dsh-translate/types
+ * @module dsh-param-repair/types
  */
 
 import type { Context, Plugin } from '@deepseek-ai/cordis'
 import type { Schema } from '@deepseek-ai/schemastery'
 import type { ToolRunContext } from '@deepseek-ai/dsh-tools'
 
-export declare const name: 'dsh-translate'
+export declare const name: 'dsh-param-repair'
 export declare const inject: readonly ['commands', 'tools']
 
 /** Repair layer strategy switches. */

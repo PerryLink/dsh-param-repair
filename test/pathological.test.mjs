@@ -2,7 +2,7 @@
  * Pathological-input suite (U6): malformed and truncated JSON stays bounded
  * inside the strategy budget and never hangs the repair layer. Hard per-test
  * timeouts enforce "completes, does not hang" independently of assertions.
- * @module dsh-translate/test/pathological.test
+ * @module dsh-param-repair/test/pathological.test
  */
 
 import { test } from 'node:test'
@@ -22,7 +22,7 @@ const HARD_TIMEOUT = 10_000
 async function mountHarness() {
   const ctx = new Context()
   await ctx.plugin(SessionStore)
-  const session = ctx.sessions.create(SessionId('dsh-translate-pathological'))
+  const session = ctx.sessions.create(SessionId('dsh-param-repair-pathological'))
   ctx.provide('systemPrompt', { tools: () => () => undefined, section: () => () => undefined })
   await ctx.plugin(ToolRuntime)
   // 0.2.2 moved raw batch execution behind a pluggable executor: mounting the
@@ -81,7 +81,7 @@ test('fix_json through the real registry stays bounded on a pathological payload
     const batch = await ctx.tools.execute({
       calls: [{
         type: 'tool-call',
-        id: CallId('dsh-translate-pathological'),
+        id: CallId('dsh-param-repair-pathological'),
         name: 'fix_json',
         arguments: JSON.stringify({ text: '{"a": ' + '['.repeat(500) + '1' + ','.repeat(200) + '}' }),
       }],

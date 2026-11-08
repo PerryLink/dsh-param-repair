@@ -4,7 +4,7 @@
  * default-export guard (module namespace + Loader unwrap round-trip), and
  * the tool three-interface assertion (model schema + canonical value +
  * content blocks) through the real ToolRuntime.
- * @module dsh-translate/test/lifecycle.test
+ * @module dsh-param-repair/test/lifecycle.test
  */
 
 import { test } from 'node:test'
@@ -40,7 +40,7 @@ function makeAgent(/** @type {any} */ session) {
 async function mountHarness() {
   const ctx = new Context()
   await ctx.plugin(SessionStore)
-  const session = ctx.sessions.create(SessionId('dsh-translate-lifecycle'))
+  const session = ctx.sessions.create(SessionId('dsh-param-repair-lifecycle'))
   ctx.provide('systemPrompt', { tools: () => () => undefined, section: () => () => undefined })
   await ctx.plugin(ToolRuntime)
   // 0.2.2 moved raw batch execution behind a pluggable executor: mounting the
@@ -61,7 +61,7 @@ test('module carries no default export and Loader unwrap round-trips the namespa
   const loader = Object.create(Loader.prototype)
   const unwrapped = loader.unwrapExports(plugin)
   assert.equal(unwrapped, plugin)
-  assert.equal(unwrapped.name, 'dsh-translate')
+  assert.equal(unwrapped.name, 'dsh-param-repair')
   assert.deepEqual(unwrapped.inject, ['commands', 'tools'])
   assert.ok(unwrapped.Config !== undefined)
   assert.equal(typeof unwrapped.apply, 'function')
@@ -122,7 +122,7 @@ test('fix_json keeps the model schema, canonical value, and content blocks stabl
     const batch = await harness.ctx.tools.execute({
       calls: [{
         type: 'tool-call',
-        id: CallId('dsh-translate-three-interfaces'),
+        id: CallId('dsh-param-repair-three-interfaces'),
         name: 'fix_json',
         arguments: JSON.stringify({ text: '{"a": 1,}' }),
       }],

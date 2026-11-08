@@ -3,7 +3,7 @@
  * Print one version's CHANGELOG section to stdout (everything until the next
  * `## [` heading). Used by the release workflow to build the GitHub Release
  * body.
- * @module dsh-translate/scripts/changelog-section
+ * @module dsh-param-repair/scripts/changelog-section
  */
 
 import { readFileSync } from 'node:fs'

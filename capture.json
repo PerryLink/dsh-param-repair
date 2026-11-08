@@ -1,6 +1,6 @@
 {
   "schema": "dsh-capture/v1",
-  "repository": "dsh-translate",
+  "repository": "dsh-param-repair",
   "storyboard": [
     "$ pnpm test"
   ],

@@ -6,7 +6,7 @@
  * hand-built `ctx.plugin` assembly never exercises. Also carries the two
  * negative regressions: invalid config must fail loud for the expected
  * reason, and a default export must fail with the missing-inject reason.
- * @module dsh-translate/test/composition.test
+ * @module dsh-param-repair/test/composition.test
  */
 
 import { test } from 'node:test'
@@ -46,7 +46,7 @@ function runRunner(configPath, expected) {
   return { status: result.status, stdout: result.stdout, stderr: result.stderr }
 }
 
-const temporaryRoot = mkdtempSync(join(tmpdir(), 'dsh-translate-loader-'))
+const temporaryRoot = mkdtempSync(join(tmpdir(), 'dsh-param-repair-loader-'))
 
 test('Loader composition mounts the plugin and applies its config (repaired)', () => {
   const configPath = join(temporaryRoot, 'valid.yml')

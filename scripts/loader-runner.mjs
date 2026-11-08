@@ -62,7 +62,7 @@ try {
   if (ctx.tools.get('fix_json') === undefined) {
     throw new Error('Loader composition: fix_json tool is missing from the tools registry')
   }
-  const session = ctx.sessions.create(SessionId('dsh-translate-loader-runner'))
+  const session = ctx.sessions.create(SessionId('dsh-param-repair-loader-runner'))
   const agent = /** @type {any} */ ({
     id: session.id,
     options: { provider: 'deepseek', model: 'demo-model' },
@@ -96,7 +96,7 @@ try {
   const batch = await ctx.tools.execute({
     calls: [{
       type: 'tool-call',
-      id: CallId('dsh-translate-loader-runner'),
+      id: CallId('dsh-param-repair-loader-runner'),
       name: 'fix_json',
       arguments: JSON.stringify({ text: '{"a": 1,}', schema: { type: 'object', properties: { a: { type: 'integer' } }, required: ['a'], additionalProperties: false } }),
     }],

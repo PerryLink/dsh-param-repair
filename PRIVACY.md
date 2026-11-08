@@ -1,6 +1,6 @@
 # Privacy
 
-`dsh-translate` is a local DeepSeek Harness plugin.
+`dsh-param-repair` is a local DeepSeek Harness plugin.
 
 - It reads only the workspace files, configuration and tool inputs needed for its documented features.
 - It does not add telemetry, analytics, advertising or a hosted account, and it sends no data to PerryLink.

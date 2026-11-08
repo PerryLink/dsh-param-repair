@@ -1,4 +1,4 @@
-# Contributing to dsh-translate
+# Contributing to dsh-param-repair
 
 Thanks for helping. This project is maintained as a normal member of the PerryLink DSH plugin family.
 

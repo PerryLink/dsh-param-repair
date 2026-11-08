@@ -3,7 +3,7 @@
  * Session, ToolRuntime, and Commands runtime — only the model-side and the
  * session driver are scripted. Covers the post-execute repair listener, the
  * fix_json tool, the /translate registration, and the session audit events.
- * @module dsh-translate/test/index.test
+ * @module dsh-param-repair/test/index.test
  */
 
 import { test } from 'node:test'
@@ -42,7 +42,7 @@ function makeAgent(/** @type {any} */ session) {
 async function mountHarness(config = {}) {
   const ctx = new Context()
   await ctx.plugin(SessionStore)
-  const session = ctx.sessions.create(SessionId('dsh-translate-harness'))
+  const session = ctx.sessions.create(SessionId('dsh-param-repair-harness'))
   session.append('turn/start', { turn: 1 })
   ctx.provide('systemPrompt', { tools: () => () => undefined, section: () => () => undefined })
   await ctx.plugin(ToolRuntime)
@@ -60,7 +60,7 @@ async function callTool(/** @type {any} */ harness, /** @type {string} */ name, 
   const batch = await harness.ctx.tools.execute({
     calls: [{
       type: 'tool-call',
-      id: CallId(`dsh-translate-spec-${callCounter}`),
+      id: CallId(`dsh-param-repair-spec-${callCounter}`),
       name,
       arguments: JSON.stringify(args),
     }],
@@ -113,7 +113,7 @@ test('translatePair maps a parameter and reports unknown vendors', () => {
 })
 
 test('handleTranslateCommand routes subcommands', () => {
-  assert.match(handleTranslateCommand('').text, /dsh-translate/u)
+  assert.match(handleTranslateCommand('').text, /dsh-param-repair/u)
   assert.match(handleTranslateCommand('vendors').text, /openai/u)
   assert.match(handleTranslateCommand('params').text, /temperature/u)
   assert.equal(handleTranslateCommand('wat').kind, 'error')
