@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2] - 2026-11-09
+
+### Changed
+
+- Re-release from the 1.0.1 tree to attach SLSA provenance via npm trusted publishing.
+  No runtime change.
+
 ## [1.0.1] - 2026-11-08
 
 ### Changed
