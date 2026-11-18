@@ -9,7 +9,7 @@
 
 **Faça a mesma requisição funcionar em todos os provedores: o JSON quebrado é corrigido na hora, nunca inventando dados.**
 
-Um plugin puramente host-side para o DeepSeek Harness: o `/translate` mapeia 13 parâmetros canônicos em 11 provedores, e a camada de reparo de `tools/post-execute` mais a ferramenta `fix_json` reparam de forma determinística o JSON quebrado dos resultados bem-sucedidos até ele passar na validação de schema.
+Um plugin puramente host-side para o DeepSeek Harness: o `dsh-v0.2.2-rc.4`（2026-11-18）；`/translate` mapeia 13 parâmetros canônicos em 11 provedores, e a camada de reparo de `tools/post-execute` mais a ferramenta `fix_json` reparam de forma determinística o JSON quebrado dos resultados bem-sucedidos até ele passar na validação de schema.
 
 [Instalar](#instalação-em-três-passos) · [Configuração](#configuração) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
