@@ -288,7 +288,7 @@ profile patch 中的覆盖示例：
 
 | 维度 | 状态 |
 |---|---|
-| Harness | 主版本 **`dsh-v0.2.1-alpha.1`**（2026-09-24 核验：双 typecheck 尺子 + `node --test` 80/80 + self-contained/artifacts 门）。`engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`；npm dev/test 钉号 `0.2.2-rc.1`。 |
+| Harness | 主版本 **`dsh-v0.2.2-rc.4`**（2026-11-18 核验：双 typecheck 尺子 + `node --test` 80/80 + self-contained/artifacts 门）。`engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`；npm dev/test 钉号 `0.2.2-rc.1`。 |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | 形态 | 纯 host JS 插件（无浏览器半、无构建步骤） |
 | 模型 | 任意模型——修复完全确定性，不增加模型调用 |

@@ -283,7 +283,7 @@ Evidencia estática: `dsh-plugin-doctor` K10–K13 informan `pass` en todas las 
 
 | Superficie | Estado |
 |---|---|
-| Harness | Versión principal **`dsh-v0.2.1-alpha.1`** (verificado el 2026-09-24: doble regla de typecheck + `node --test` 80/80 + puertas self-contained/artifacts). `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; pines npm dev/test `0.2.2-rc.1`. |
+| Harness | Versión principal **`dsh-v0.2.2-rc.4`** (verificado el 2026-11-18: doble regla de typecheck + `node --test` 80/80 + puertas self-contained/artifacts). `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; pines npm dev/test `0.2.2-rc.1`. |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | Forma | Plugin JS puramente host (sin mitad de navegador, sin paso de compilación) |
 | Modelo | Cualquier modelo: la reparación es totalmente determinista y no añade llamadas al modelo |

@@ -288,7 +288,7 @@ Static evidence: `dsh-plugin-doctor` K10–K13 report `pass` for every check on 
 
 | Surface | Status |
 |---|---|
-| Harness | Main version **`dsh-v0.2.1-alpha.1`** (verified 2026-09-24: dual typecheck rulers + `node --test` 80/80 + self-contained/artifacts gates). `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; npm dev/test pins `0.2.2-rc.1`. |
+| Harness | Main version **`dsh-v0.2.2-rc.4`** (verified 2026-11-18: dual typecheck rulers + `node --test` 80/80 + self-contained/artifacts gates). `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; npm dev/test pins `0.2.2-rc.1`. |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | Form | Pure-host JS plugin (no browser half, no build step) |
 | Model | Any model — repair is fully deterministic and adds no model calls |

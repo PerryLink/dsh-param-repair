@@ -283,7 +283,7 @@ fix_json failed (INVALID_SCHEMA): #.pattern is not a supported keyword (subset: 
 
 | सतह | स्थिति |
 |---|---|
-| Harness | मुख्य संस्करण **`dsh-v0.2.1-alpha.1`** (2026-09-24 को सत्यापित: दोहरी typecheck रूलर + `node --test` 80/80 + self-contained/artifacts गेट)। `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; npm dev/test पिन `0.2.2-rc.1`। |
+| Harness | मुख्य संस्करण **`dsh-v0.2.2-rc.4`** (2026-11-18 को सत्यापित: दोहरी typecheck रूलर + `node --test` 80/80 + self-contained/artifacts गेट)। `engines.dsh` = `>=0.2.1-0 <0.3.0 \|\| >=0.2.2-0 <0.3.0`; npm dev/test पिन `0.2.2-rc.1`। |
 | Node | `^22.19.0 \|\| >=24.9.0` |
 | रूप | शुद्ध host JS प्लगइन (कोई ब्राउज़र भाग नहीं, कोई बिल्ड चरण नहीं) |
 | मॉडल | कोई भी मॉडल — रिपेयर पूरी तरह नियतात्मक है और कोई अतिरिक्त मॉडल कॉल नहीं जोड़ता |
