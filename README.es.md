@@ -45,6 +45,11 @@ El "translate" del nombre es una tabla de correspondencia de parámetros, no tra
   <img src="docs/assets/dsh-param-repair-flow-v5-light.svg" width="100%" alt="Estructura de dsh-param-repair: arriba, la cara de comando /translate lee la tabla 13 × 11 y devuelve una correspondencia; abajo, la máquina de estados de reparación de tools/post-execute y fix_json — puerta de reclamación, extracción y análisis, bucle de estrategias ≤ maxSteps, relleno null de campos obligatorios, validación del subconjunto de esquema y, al final, accept o next() conservando el original">
 </picture>
 
+![dsh-param-repair: ejecución real de terminal](docs/assets/dsh-param-repair-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 ## Instalación en tres pasos
 
 1. **Instalar** (elige una vía):

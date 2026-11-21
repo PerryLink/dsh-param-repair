@@ -41,6 +41,10 @@ dsh plugin --profile <name> add dsh-param-repair
 
 ## 它是什么
 
+![dsh-param-repair 真实终端运行](docs/assets/dsh-param-repair-demo.gif)
+
+*本仓库一次真实运行的动图回放。*
+
 `dsh-param-repair` 管两件事，彼此独立。第一件是**厂商参数翻译**：把 `temperature`、`top_p`、`max_tokens`、`stop`、`system` 这类规范参数，按 11 家厂商的真实字段名对过去（OpenAI、ERNIE、Qwen、Anthropic、Google、DeepSeek、Mistral、Cohere、xAI、Groq、Azure），既可以用 `/translate openai ernie max_tokens` 查单条，也可以让 `lib/rosetta.mjs` 的 `transformRequest` 整包转换一个标准请求。第二件是**确定性 JSON 修复**：成功的工具结果里如果带着一段坏 JSON，`tools/post-execute` 监听器会先提取围栏、再解析、再跑四种文本策略，直到它能过 schema 校验——修不动就原样放行，绝不编造数值。
 
 名字里的“翻译”指的是厂商参数映射，不是机器翻译。纯主机端、纯 ESM、零构建步骤，`index.mjs` 与 `lib/` 即发布产物。

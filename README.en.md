@@ -127,6 +127,10 @@ tool result (success, JSON text) ──▶ extract fence ──▶ parse
 
 ### Examples
 
+![dsh-param-repair: real terminal run](docs/assets/dsh-param-repair-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 These are the plugin's real entry points; install once, then call one.
 
 **Detailed example** — command `/translate openai ernie max_tokens`:

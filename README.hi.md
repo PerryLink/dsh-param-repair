@@ -45,6 +45,11 @@ dsh plugin --profile <name> add dsh-param-repair
   <img src="docs/assets/dsh-param-repair-flow-v5-light.svg" width="100%" alt="dsh-param-repair संरचना: ऊपर /translate कमांड फ़ेस 13 × 11 तालिका पढ़कर मैपिंग देता है; नीचे tools/post-execute और fix_json की रिपेयर स्टेट मशीन — क्लेम गेट, फ़ेंस निष्कर्षण और पार्स, ≤ maxSteps रणनीति लूप, अनिवार्य फ़ील्ड का null पूरण, स्कीमा सबसेट सत्यापन, और अंत में accept या मूल मान के साथ next()">
 </picture>
 
+![dsh-param-repair का असली टर्मिनल रन](docs/assets/dsh-param-repair-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 ## तीन चरणों में शुरुआत
 
 1. **इंस्टॉल करें** (कोई एक मार्ग चुनें):
