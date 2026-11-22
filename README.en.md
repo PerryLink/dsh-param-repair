@@ -9,12 +9,14 @@
 
 **Make the same request work on every vendor — broken JSON fixed on the spot, never with invented data.**
 
-A pure host-side plugin for DeepSeek Harness: `dsh-v0.2.2-rc.4`（2026-11-18）；`/translate` maps 13 canonical parameters across 11 vendors, and the `tools/post-execute` repair layer plus the `fix_json` tool deterministically repair broken JSON in successful tool results until it passes schema validation.
+A pure host-side plugin for DeepSeek Harness:, `/translate` maps 13 canonical parameters across 11 vendors, and the `tools/post-execute` repair layer plus the `fix_json` tool deterministically repair broken JSON in successful tool results until it passes schema validation.
 
 > **Formerly `dsh-translate` (0.2.x).** Since 1.0.0 this package is `dsh-param-repair`; the npm name
 > `dsh-translate` now belongs to the [full-page translator](https://github.com/PerryLink/dsh-translate).
 > The `/translate` command, the `fix_json` tool, the `translate/fix` event and every config key are
 > unchanged — migration is just replacing the package name in the profile row.
+
+Last verified on DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
 
 [Install](#three-step-setup) · [Configuration](#configuration) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 

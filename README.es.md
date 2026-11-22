@@ -9,7 +9,9 @@
 
 **Haz que la misma petición funcione en todos los proveedores: el JSON roto se repara al instante, nunca inventando datos.**
 
-Un plugin puramente host-side para DeepSeek Harness: `dsh-v0.2.2-rc.4`（2026-11-18）；`/translate` asigna 13 parámetros canónicos a 11 proveedores, y la capa de reparación de `tools/post-execute` junto con la herramienta `fix_json` reparan de forma determinista el JSON roto de los resultados correctos hasta que pasa la validación del esquema.
+Un plugin puramente host-side para DeepSeek Harness:, `/translate` asigna 13 parámetros canónicos a 11 proveedores, y la capa de reparación de `tools/post-execute` junto con la herramienta `fix_json` reparan de forma determinista el JSON roto de los resultados correctos hasta que pasa la validación del esquema.
+
+Última verificación: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
 
 [Instalar](#instalación-en-tres-pasos) · [Configuración](#configuración) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
@@ -48,7 +50,6 @@ El "translate" del nombre es una tabla de correspondencia de parámetros, no tra
 ![dsh-param-repair: ejecución real de terminal](docs/assets/dsh-param-repair-demo.gif)
 
 *Repetición animada de una ejecución real registrada en este repositorio.*
-
 
 ## Instalación en tres pasos
 

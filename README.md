@@ -9,12 +9,14 @@
 
 **让同一份请求跑通每一家厂商——坏 JSON 当场修好，绝不编造数据。**
 
-面向 DeepSeek Harness 的纯主机端插件：`dsh-v0.2.2-rc.4`（2026-11-18）；`/translate` 把 13 个规范参数映射到 11 家厂商，`tools/post-execute` 修复层与 `fix_json` 工具把成功工具结果里的坏 JSON 确定性地修到能过 schema 校验。
+面向 DeepSeek Harness 的纯主机端插件：、`/translate` 把 13 个规范参数映射到 11 家厂商，`tools/post-execute` 修复层与 `fix_json` 工具把成功工具结果里的坏 JSON 确定性地修到能过 schema 校验。
 
 > **原名 `dsh-translate`（0.2.x）。** 自 1.0.0 起本包改名 `dsh-param-repair`；npm 名
 > `dsh-translate` 现在属于[整页翻译插件](https://github.com/PerryLink/dsh-translate)。`/translate` 命令、
 > `fix_json` 工具、`translate/fix` 事件与全部配置键都没有变，迁移只需把 profile 行里的包名换成
 > `dsh-param-repair`。
+
+最近一次核验：DeepSeek Harness `dsh-v0.2.3-alpha.1`（2026-11-22）。
 
 [安装](#三步上手) · [配置](#配置) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 

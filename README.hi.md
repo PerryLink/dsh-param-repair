@@ -9,7 +9,9 @@
 
 **एक ही अनुरोध हर वेंडर पर चलाएँ — टूटा हुआ JSON वहीं ठीक हो जाता है, कभी डेटा गढ़कर नहीं।**
 
-DeepSeek Harness के लिए शुद्ध host-side प्लगइन: `dsh-v0.2.2-rc.4`（2026-11-18）；`/translate` 13 कैनोनिकल पैरामीटर को 11 वेंडर पर मैप करता है, और `tools/post-execute` रिपेयर परत तथा `fix_json` टूल सफल टूल परिणामों के टूटे JSON को तब तक नियतात्मक रूप से ठीक करते हैं जब तक वह स्कीमा सत्यापन पास न कर ले।
+DeepSeek Harness के लिए शुद्ध host-side प्लगइन:, `/translate` 13 कैनोनिकल पैरामीटर को 11 वेंडर पर मैप करता है, और `tools/post-execute` रिपेयर परत तथा `fix_json` टूल सफल टूल परिणामों के टूटे JSON को तब तक नियतात्मक रूप से ठीक करते हैं जब तक वह स्कीमा सत्यापन पास न कर ले।
+
+अंतिम सत्यापन: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
 
 [इंस्टॉल](#तीन-चरणों-में-शुरुआत) · [कॉन्फ़िगरेशन](#कॉन्फ़िगरेशन) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
@@ -48,7 +50,6 @@ dsh plugin --profile <name> add dsh-param-repair
 ![dsh-param-repair का असली टर्मिनल रन](docs/assets/dsh-param-repair-demo.gif)
 
 *इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
-
 
 ## तीन चरणों में शुरुआत
 
