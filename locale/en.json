@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Vendor parameter mapping & JSON repair",
+    "description": "Make the same request work on every vendor — broken JSON fixed on the spot, never with invented data."
+  }
+}

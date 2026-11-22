@@ -7,6 +7,8 @@
 
 # dsh-param-repair
 
+Current version `1.0.5`.
+
 **Make the same request work on every vendor — broken JSON fixed on the spot, never with invented data.**
 
 A pure host-side plugin for DeepSeek Harness:, `/translate` maps 13 canonical parameters across 11 vendors, and the `tools/post-execute` repair layer plus the `fix_json` tool deterministically repair broken JSON in successful tool results until it passes schema validation.

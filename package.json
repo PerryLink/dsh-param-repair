@@ -1,6 +1,6 @@
 {
   "name": "dsh-param-repair",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vendor parameter mapping and deterministic JSON repair for DeepSeek Harness: the /translate command maps temperature/top_p/max_tokens/stop/system across 11 vendors, and the tools/post-execute repair layer (plus the fix_json tool) fixes broken JSON tool output with escape repair, trailing-comma removal, truncation closure, and required-field completion — never fabricating data",
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
       "types": "./types.d.ts",
       "default": "./index.mjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
   },
   "files": [
     "index.mjs",
@@ -37,7 +38,9 @@
     "README.pt.md",
     "README.hi.md",
     "docs/assets/*",
-    "LICENSE"
+    "LICENSE",
+    "locale/*.json",
+    "icon.svg"
   ],
   "dsh": {
     "manifestVersion": 1,
@@ -148,5 +151,6 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/PerryLink"
-  }
+  },
+  "icon": "icon.svg"
 }

@@ -7,6 +7,8 @@
 
 # dsh-param-repair
 
+当前版本 `1.0.5`。
+
 **让同一份请求跑通每一家厂商——坏 JSON 当场修好，绝不编造数据。**
 
 面向 DeepSeek Harness 的纯主机端插件：、`/translate` 把 13 个规范参数映射到 11 家厂商，`tools/post-execute` 修复层与 `fix_json` 工具把成功工具结果里的坏 JSON 确定性地修到能过 schema 校验。
